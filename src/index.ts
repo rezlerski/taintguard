@@ -4,7 +4,6 @@ export * from "./core/normalizer.js";
 export * from "./core/detector.js";
 export * from "./core/rules.js";
 export * from "./core/renderer.js";
-export * from "./core/guard.js";
 export * from "./core/audit.js";
 export * from "./tools/auditedTool.js";
 export * from "./adapters/openai.js";

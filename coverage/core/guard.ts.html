@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.11% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>11/18</span>
+                <span class='fraction'>0/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/4</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.11% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11/18</span>
+                <span class='fraction'>0/18</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -87,23 +87,22 @@
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
-<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -111,23 +110,24 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Message, Rules, Violation } from "./types.js";
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { Message, Rules, Violation } from "./types.js";<span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span>
 import { spanViolations } from "./detector.js";
 &nbsp;
-export function preflight(messages: Message[], rules: Rules): Violation[] {
-  const inj = rules.<span class="branch-0 cbranch-no" title="branch not covered" >injections ?? [];</span>
-  const v: Violation[] = [];
-  for (const m of messages) for (const s of m.spans) {
-    const hits = spanViolations(s, inj);
-    if (hits.length) v.push({ code: "INJECTION", message: `Denied patterns: ${hits.join(", ")}`, span: s });
-  }
-  return v;
-}
+<span class="cstat-no" title="statement not covered" >export function preflight(messages: Message[], rules: Rules): Violation[] {</span>
+<span class="cstat-no" title="statement not covered" >  const inj = rules.injections ?? [];</span>
+<span class="cstat-no" title="statement not covered" >  const v: Violation[] = [];</span>
+<span class="cstat-no" title="statement not covered" >  for (const m of messages) for (const s of m.spans) {</span>
+<span class="cstat-no" title="statement not covered" >    const hits = spanViolations(s, inj);</span>
+<span class="cstat-no" title="statement not covered" >    if (hits.length) v.push({ code: "INJECTION", message: `Denied patterns: ${hits.join(", ")}`, span: s });</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  return v;</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export type StreamAction = "pass" | "mask" | "drop" | "abort";
 export type OnToken = (tok: string) =&gt; StreamAction;
 &nbsp;
-export <span class="fstat-no" title="function not covered" >function streamGuard(onTokenRules: { denyLeakage?: RegExp[] }) {</span>
+<span class="cstat-no" title="statement not covered" >export function streamGuard(onTokenRules: { denyLeakage?: RegExp[] }) {</span>
 <span class="cstat-no" title="statement not covered" >  const patterns = onTokenRules.denyLeakage ?? [];</span>
 <span class="cstat-no" title="statement not covered" >  return (tok: string): StreamAction =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    if (patterns.some(r =&gt; r.test(tok))) return "mask";</span>
@@ -142,7 +142,7 @@ export <span class="fstat-no" title="function not covered" >function streamGuard
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-11T19:21:52.261Z
+                at 2025-10-14T07:59:29.358Z
             </div>
         <script src="../prettify.js"></script>
         <script>
