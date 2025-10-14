@@ -1,6 +1,6 @@
 {
   "name": "taintguard",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Span-based taint tracking for LLM prompts (TypeScript-first).",
   "license": "MIT",
   "author": "Maciej Rezler",
